@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Form;
-
 use App\Entity\Chambre;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+
 
 class ChambreType extends AbstractType
 {
@@ -15,7 +16,19 @@ class ChambreType extends AbstractType
         $builder
             ->add('typachambre')
             ->add('nombrelit')
-            ->add('typelit')
+            ->add('typelit' , ChoiceType::class,
+                [
+                    'choices'  =>
+                        [
+                            'simple' => true,
+                            'double' => true,
+                            'triple' => true,
+                            'quadre' => true,
+                        ],
+                    'multiple'=>true,
+                    'expanded'=>true,
+
+                ])
             ->add('statut')
         ;
     }
