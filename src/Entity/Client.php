@@ -53,6 +53,7 @@ class Client
      * @ORM\OneToMany(targetEntity=Reservation::class, mappedBy="client")
      */
     private $reservations;
+    private $choic;
 
     public function __construct()
     {
