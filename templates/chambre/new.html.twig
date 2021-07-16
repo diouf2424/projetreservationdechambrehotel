@@ -3,9 +3,12 @@
 {% block title %}New Chambre{% endblock %}
 
 {% block body %}
-    <h1>Create new Chambre</h1>
+    <br>
+    <br>
 
+    <img src="/images/full-slider-2.jpg" alt="image de represantation de chambre">
+    <h1>Creer une nouvelle Chambre</h1>
     {{ include('chambre/_form.html.twig') }}
 
-    <a href="{{ path('chambre_index') }}">back to list</a>
+    <a href="{{ path('chambre_index') }}"> <input type="button" value="Retour a la liste" /></a>
 {% endblock %}

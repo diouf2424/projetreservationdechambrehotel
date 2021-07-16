@@ -3,7 +3,9 @@
 {% block title %}Chambre index{% endblock %}
 
 {% block body %}
-    <h1>Chambre index</h1>
+    <br>
+    <br>
+    <h1> La liste des Chambre disponibles </h1>
 
     <table class="table">
         <thead>
@@ -25,8 +27,8 @@
                 <td>{{ chambre.typelit }}</td>
                 <td>{{ chambre.statut ? 'Yes' : 'No' }}</td>
                 <td>
-                    <a href="{{ path('chambre_show', {'id': chambre.id}) }}">show</a>
-                    <a href="{{ path('chambre_edit', {'id': chambre.id}) }}">edit</a>
+                    <a href="{{ path('chambre_show', {'id': chambre.id}) }}"><input type="button" value="Afficher" /></a>
+                    <a href="{{ path('chambre_edit', {'id': chambre.id}) }}"><input type="button" value="Modifier" /></a>
                 </td>
             </tr>
         {% else %}
@@ -37,5 +39,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('chambre_new') }}">nouvelle chambre</a>
+    <a href="{{ path('chambre_new') }}"><input type="button" value="Ajouter une chambre" /></a>
 {% endblock %}
