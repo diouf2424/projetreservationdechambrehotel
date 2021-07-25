@@ -3,6 +3,7 @@
 {% block title %}Chambre index{% endblock %}
 
 {% block body %}
+    <img src="{{ asset('images/01.jpg') }}">
     <br>
     <br>
     <h1> La liste des Chambre  </h1>
@@ -40,9 +41,7 @@
     </table>
     <br>
     <br>
-    <br>
     <a href="{{ path('chambre_new') }}"><input type="button" value="Ajouter une chambre" /></a>
-    <br>
     <br>
     <br>
 {% endblock %}

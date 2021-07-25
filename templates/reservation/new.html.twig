@@ -3,11 +3,12 @@
 {% block title %}New Reservation{% endblock %}
 
 {% block body %}
-    <h1></h1>
+    <img src="{{ asset('images/05.jpeg') }}">
+    <h1>Faites ici votre reservation</h1>
     <br>
     <br>
 
     {{ include('reservation/_form.html.twig') }}
 
-    <a href="{{ path('reservation_index') }}">back to list</a>
+    <a href="{{ path('reservation_index') }}">  <button class="btn">back to list</button></a>
 {% endblock %}
