@@ -52,5 +52,4 @@ Perspectives
 
 
 Lien Trello :https://trello.com/b/25OEOhbs
-Lien Github: 
-https://github.com/diouf2424/projet_de_gestion_des_reservations_de_chambres_d_hotel
+Lien Github: https://github.com/diouf2424/projetreservationdechambrehotel.git
