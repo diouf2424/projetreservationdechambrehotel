@@ -3,9 +3,10 @@
 {% block title %}Reservation index{% endblock %}
 
 {% block body %}
+    <img src="{{ asset('images/07.jpg') }}">
     <br>
     <br>
-    <h1> </h1>
+    <h1> la liste des reservations faites</h1>
 
     <table class="table">
         <thead>
@@ -27,8 +28,8 @@
                 <td>{{ reservation.datepaiement ? reservation.datepaiement|date('Y-m-d') : '' }}</td>
                 <td>{{ reservation.montant }}</td>
                 <td>
-                    <a href="{{ path('reservation_show', {'id': reservation.id}) }}">show</a>
-                    <a href="{{ path('reservation_edit', {'id': reservation.id}) }}">edit</a>
+                    <a href="{{ path('reservation_show', {'id': reservation.id}) }}">Afficher</a>
+                    <a href="{{ path('reservation_edit', {'id': reservation.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -39,5 +40,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('reservation_new') }}">Create new</a>
+    <a href="{{ path('reservation_new') }}">Creer nouvel</a>
 {% endblock %}

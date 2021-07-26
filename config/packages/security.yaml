@@ -38,4 +38,6 @@ security:
     access_control:
         - { path: ^/chambre/new, roles: [ROLE_USER] }
         - { path: ^/chambre/new, roles: [ROLE_ADMIN] }
+        - { path: ^/api, roles: [ ROLE_ADMIN ] }
+
         #- - { path: ^/chambre/{id}/edit, roles: [ROLE_ADMIN] }
