@@ -51,6 +51,11 @@ class Reservation
      */
     private $chambre;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="reservation")
+     */
+    private $user;
+
     public function __construct()
     {
         $this->chambre = new ArrayCollection();
@@ -147,6 +152,18 @@ class Reservation
                 $chambre->setReservation(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }
