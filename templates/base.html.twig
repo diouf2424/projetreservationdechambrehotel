@@ -772,8 +772,12 @@
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="{{ path('app_register') }}">S'INSCRIRE </a>
-					</li><li class="nav-item">
-						<a class="nav-link" href="{{ path('app_login') }}">CONNEXION</a>
+					</li>
+                    <li class="nav-item">
+						<a class="nav-link" href="{{ path('app_login') }}"><input type="button" value="CONNECTER"/></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_logout')}}"><input type="button" value="DECONNECTER"/></a>
 					</li>
 				</ul>
 			</div>
@@ -884,7 +888,7 @@
 										<a href="{{ path('chambre_index') }}">Services</a>
 									</li>
 									<li>
-										<a href="{{ path('home') }}">Projects</a>
+										<a href="{{ path('app_logout') }}">DECONNECTER</a>
 									</li>
 									<li>
 										<a href="{{ path('home') }}">Notre equipe</a>
@@ -892,7 +896,7 @@
 								</ul>
 								<ul>
 									<li>
-										<a href="{{ path('home') }}">Contact</a>
+										<a href="{{ path('app_logout') }}">Contact</a>
 									</li>
 									<li>
 										<a href="{{ path('home') }}">Blog</a>

@@ -28,8 +28,8 @@
                 <td>{{ reservation.datepaiement ? reservation.datepaiement|date('Y-m-d') : '' }}</td>
                 <td>{{ reservation.montant }}</td>
                 <td>
-                    <a href="{{ path('reservation_show', {'id': reservation.id}) }}">Afficher</a>
-                    <a href="{{ path('reservation_edit', {'id': reservation.id}) }}">Modifier</a>
+                    <a href="{{ path('reservation_show', {'id': reservation.id}) }}"><input type="button" value="Afficher"/></a>
+                    <a href="{{ path('reservation_edit', {'id': reservation.id}) }}"><input type="button" value="Modifier"/></a>
                 </td>
             </tr>
         {% else %}
@@ -39,6 +39,8 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('reservation_new') }}">Creer nouvel</a>
+    <br>
+    <a href="{{ path('reservation_new') }}"><input type="button" value="Ajouter reservation"/></a>
+    <br>
+    <br>
 {% endblock %}

@@ -26,7 +26,7 @@
                 <td>{{ chambre.typachambre }}</td>
                 <td>{{ chambre.nombrelit }}</td>
                 <td>{{ chambre.typelit }}</td>
-                <td>{{ chambre.statut ? 'Yes' : 'No' }}</td>
+                <td>{{ chambre.statut ? 'Disponible' : 'Occuper' }}</td>
                 <td>
                     <a href="{{ path('chambre_show', {'id': chambre.id}) }}"><input type="button" value="Afficher" /></a>
                     <a href="{{ path('chambre_edit', {'id': chambre.id}) }}"><input type="button" value="Modifier" /></a>
