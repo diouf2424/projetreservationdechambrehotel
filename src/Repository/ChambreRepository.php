@@ -22,7 +22,7 @@ class ChambreRepository extends ServiceEntityRepository
     // /**
     //  * @return Chambre[] Returns an array of Chambre objects
     //  */
-    /*
+    
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('c')
@@ -34,9 +34,9 @@ class ChambreRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
+    
 
-    /*
+  
     public function findOneBySomeField($value): ?Chambre
     {
         return $this->createQueryBuilder('c')
@@ -46,5 +46,5 @@ class ChambreRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
-    */
+    
 }

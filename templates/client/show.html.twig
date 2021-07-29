@@ -3,9 +3,9 @@
 {% block title %}Client{% endblock %}
 
 {% block body %}
+<img src="/images/full-slider-1.jpg" alt="image de represantation de client">
     <br>
-    <br>
-    <h1> </h1>
+    <h1> Informations du Client <td>{{ client.prenom }}</td> <td>{{ client.nom }}</td></h1>
 
     <table class="table">
         <tbody>
@@ -36,6 +36,10 @@
             <tr>
                 <th>Pays</th>
                 <td>{{ client.pays }}</td>
+            </tr>
+            <tr>
+                <th>reservation</th>
+                <td> <a href="{{ path('reservation_new') }}"><input type="submit"value="FAIRE UNE RESERVATION"></a></td>
             </tr>
         </tbody>
     </table>

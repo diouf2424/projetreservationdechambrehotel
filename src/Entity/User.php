@@ -197,7 +197,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         if ($this->reservation->removeElement($reservation)) {
             // set the owning side to null (unless already changed)
             if ($reservation->getUser() === $this) {
-                $reservation->setUser(null);
+                $reservation->setUser(id);
             }
         }
 

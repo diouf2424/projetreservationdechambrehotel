@@ -161,8 +161,8 @@ class Client
     {
         if ($this->reservations->removeElement($reservation)) {
             // set the owning side to null (unless already changed)
-            if ($reservation->getClient() === $this) {
-                $reservation->setClient(null);
+            if ($reservation->getClient(id) === $this) {
+                $reservation->setClient(id);
             }
         }
 
