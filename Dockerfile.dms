@@ -1,10 +1,10 @@
-FROM php:8.0.3-fpm-alpine
+FROM php:8.0-fpm-alpine
 
 # Apk install
 RUN apk --no-cache update && apk --no-cache add bash git
 
 # Install pdo
-# ( c'est important car sans ça vous ne pouvez pas vous connecter à notre base de données)
+# (c'est important car sans ça vous ne pouvez pas vous connecter à votre base de données)
 RUN docker-php-ext-install pdo_mysql
 
 # Install composer
