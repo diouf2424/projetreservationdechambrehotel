@@ -7,7 +7,7 @@ use App\Repository\ChambreRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=ChambreRepository::class)
+ * @ORM\Entity(repositoryClass="App\Repository\ChambreRepository", repositoryClass=ChambreRepository::class)
  * @ApiResource()
  */
 class Chambre
@@ -52,6 +52,12 @@ class Chambre
     public function getId(): ?int
     {
         return $this->id;
+    }
+    public function setId(int $Id): self
+    {
+        $this->Id = $Id;
+
+        return $this;
     }
 
     public function getTypachambre(): ?string
