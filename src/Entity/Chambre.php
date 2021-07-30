@@ -28,6 +28,10 @@ class Chambre
      * @ORM\Column(type="integer")
      */
     private $nombrelit;
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $prixparnuit;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -43,6 +47,7 @@ class Chambre
      * @ORM\ManyToOne(targetEntity=Reservation::class, inversedBy="chambre")
      */
     private $reservation;
+
 
     public function getId(): ?int
     {
@@ -61,6 +66,17 @@ class Chambre
         return $this;
     }
 
+    public function getPrixparnuit(): ?int
+    {
+        return $this->prixparnuit;
+    }
+
+    public function setPrixparnuit(int $prixparnuit): self
+    {
+        $this->prixparnuit = $prixparnuit;
+
+        return $this;
+    }
     public function getNombrelit(): ?int
     {
         return $this->nombrelit;
@@ -108,4 +124,6 @@ class Chambre
 
         return $this;
     }
+
+
 }

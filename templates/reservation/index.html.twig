@@ -12,10 +12,11 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>prenom</th>
+                <th>nom</th>
                 <th>Datedebut</th>
                 <th>Datefin</th>
                 <th>Datepaiement</th>
-                <th>Montant</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -23,10 +24,12 @@
         {% for reservation in reservations %}
             <tr>
                 <td>{{ reservation.id }}</td>
+                <td>{{ reservation.prenom }}</td>
+                <td>{{ reservation.nom }}</td>
                 <td>{{ reservation.datedebut ? reservation.datedebut|date('Y-m-d') : '' }}</td>
                 <td>{{ reservation.datefin ? reservation.datefin|date('Y-m-d') : '' }}</td>
                 <td>{{ reservation.datepaiement ? reservation.datepaiement|date('Y-m-d') : '' }}</td>
-                <td>{{ reservation.montant }}</td>
+                
                 <td>
                     <a href="{{ path('reservation_show', {'id': reservation.id}) }}"><input type="button" value="Afficher"/></a>
                     <a href="{{ path('reservation_edit', {'id': reservation.id}) }}"><input type="button" value="Modifier"/></a>

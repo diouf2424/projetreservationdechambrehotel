@@ -13,6 +13,7 @@
             <tr>
                 <th>Id</th>
                 <th>Typachambre</th>
+                <th>Prix par nuit</th>
                 <th>Nombrelit</th>
                 <th>Typelit</th>
                 <th>Statut</th>
@@ -24,6 +25,7 @@
             <tr>
                 <td>{{ chambre.id }}</td>
                 <td>{{ chambre.typachambre }}</td>
+                <td>{{ chambre.prixparnuit }}</td>
                 <td>{{ chambre.nombrelit }}</td>
                 <td>{{ chambre.typelit }}</td>
                 <td>{{ chambre.statut ? 'Disponible' : 'Occuper' }}</td>
@@ -43,6 +45,8 @@
     <br>
     <a href="{{ path('chambre_new') }}"><input type="button" value="Ajouter une chambre" /></a>
     <br>
+    <br>
+    <a href="{{ path('reservation_new') }}"><input type="submit"value="Ajouter une reservation"></a>
     <br>
     <br>
 {% endblock %}

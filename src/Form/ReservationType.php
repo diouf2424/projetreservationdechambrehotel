@@ -18,7 +18,7 @@ class ReservationType extends AbstractType
             ->add('datedebut')
             ->add('datefin')
             ->add('datepaiement')
-            ->add('montant')
+            //->add('montant')
         ;
     }
 

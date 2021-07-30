@@ -36,10 +36,11 @@ class Reservation
      */
     private $datepaiement;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $montant;
+   # /**
+   #  * @ORM\Column(type="integer")
+  #   */
+   # private $montant;
+
 
     /**
      * @ORM\ManyToOne(targetEntity=Client::class, inversedBy="reservations")
@@ -116,19 +117,19 @@ class Reservation
 
         return $this;
     }
-
+/*
     public function getMontant(): ?int
     {
         return $this->montant;
     }
-
+    /*
     public function setMontant(int $montant): self
     {
         $this->montant = $montant;
 
         return $this;
     }
-
+*/
     public function getClient(): ?Client
     {
         return $this->client;

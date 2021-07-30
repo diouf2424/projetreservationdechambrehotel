@@ -14,9 +14,11 @@ class ChambreType extends AbstractType
 
         $builder
             ->add('typachambre')
-            ->add('nombrelit')
+            ->add('prixparnuit')
+            ->add('nombrelit')           
             ->add('typelit')
             ->add('statut')
+            ->add('id_reservation')
         ;
     }
 
