@@ -1,0 +1,12 @@
+{
+    "git.allowForcePush": true,
+    "git.allowNoVerifyCommit": true,
+    "git.alwaysShowStagedChangesResourceGroup": true,
+    "git.autofetch": true,
+    "files.exclude": {
+        "": true
+    },
+    "git.showPushSuccessNotification": true,
+    "git.postCommitCommand": "push",
+    "git.rebaseWhenSync": true
+}
