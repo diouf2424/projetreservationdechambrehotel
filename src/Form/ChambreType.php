@@ -18,7 +18,7 @@ class ChambreType extends AbstractType
             ->add('nombrelit')           
             ->add('typelit')
             ->add('statut')
-            ->add('id_reservation')
+            
         ;
     }
 
