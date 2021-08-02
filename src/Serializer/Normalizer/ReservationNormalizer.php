@@ -19,7 +19,7 @@ class ReservationNormalizer implements NormalizerInterface, CacheableSupportsMet
     {
         $data = $this->normalizer->normalize($object, $format, $context);
 
-        // Here: add, edit, or delete some data
+        // Here: add, edit, or delete some data 
 
         return $data;
     }
