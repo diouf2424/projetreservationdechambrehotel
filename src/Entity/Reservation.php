@@ -48,11 +48,6 @@ class Reservation
     private $client;
 
     /**
-     * @ORM\OneToMany(targetEntity=Chambre::class, mappedBy="reservation")
-     */
-    private $chambre;
-
-    /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="reservation")
      */
     private $user;
@@ -72,10 +67,11 @@ class Reservation
      */
     private $email;
 
-    public function __construct()
-    {
-        $this->chambre = new ArrayCollection();
-    }
+    /**
+     * @ORM\ManyToOne(targetEntity=Chambre::class, inversedBy="reservations")
+     */
+    private $chambre;
+
 
     public function getId(): ?int
     {
@@ -142,36 +138,6 @@ class Reservation
         return $this;
     }
 
-    /**
-     * @return Collection|Chambre[]
-     */
-    public function getChambre(): Collection
-    {
-        return $this->chambre;
-    }
-
-    public function addChambre(Chambre $chambre): self
-    {
-        if (!$this->chambre->contains($chambre)) {
-            $this->chambre[] = $chambre;
-            $chambre->setReservation($this);
-        }
-
-        return $this;
-    }
-
-    public function removeChambre(Chambre $chambre): self
-    {
-        if ($this->chambre->removeElement($chambre)) {
-            // set the owning side to null (unless already changed)
-            if ($chambre->getReservation(id) === $this) {
-                $chambre->setReservation(id);
-            }
-        }
-
-        return $this;
-    }
-
     public function getUser(): ?User
     {
         return $this->user;
@@ -216,6 +182,18 @@ class Reservation
     public function setEmail(string $email): self
     {
         $this->email = $email;
+
+        return $this;
+    }
+
+    public function getChambre(): ?Chambre
+    {
+        return $this->chambre;
+    }
+
+    public function setChambre(?Chambre $chambre): self
+    {
+        $this->chambre = $chambre;
 
         return $this;
     }

@@ -3,8 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\Reservation;
+use App\Entity\Chambre;
 use App\Form\ReservationType;
 use App\Repository\ReservationRepository;
+use App\Repository\ChambreRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,13 +24,16 @@ class ReservationController extends AbstractController
     }
 
     #[Route('/new', name: 'reservation_new', methods: ['GET', 'POST'])]
-    public function new(Request $request): Response
+    public function new(ChambreRepository $repo, Request $request): Response
     {
+        $id = $_GET['id'];
+        $chambre = $repo->find($id);
         $reservation = new Reservation();
         $form = $this->createForm(ReservationType::class, $reservation);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $reservation->setChambre($chambre);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($reservation);
             $entityManager->flush();

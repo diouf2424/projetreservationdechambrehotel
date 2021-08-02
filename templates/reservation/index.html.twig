@@ -32,7 +32,10 @@
                 
                 <td>
                     <a href="{{ path('reservation_show', {'id': reservation.id}) }}"><input type="button" value="Afficher"/></a>
-                    <a href="{{ path('reservation_edit', {'id': reservation.id}) }}"><input type="button" value="Modifier"/></a>
+                     {% if app.user %}
+                     <a href="{{ path('reservation_edit', {'id': reservation.id}) }}"><input type="button" value="Modifier"/></a>
+                    {% endif %}
+                   
                 </td>
             </tr>
         {% else %}

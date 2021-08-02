@@ -21,6 +21,14 @@ class ChambreController extends AbstractController
         ]);
     }
 
+    #[Route('/getAllChambres', name: 'getAllChambres', methods: ['GET'])]
+    public function GetAllChambres(ChambreRepository $chambreRepository): Response
+    {
+        return $this->render('home/index.html.twig', [
+            'chambres' => $chambreRepository->findAll(),
+        ]);
+    }
+
     #[Route('/new', name: 'chambre_new', methods: ['GET', 'POST'])]
     public function new(Request $request): Response
     {

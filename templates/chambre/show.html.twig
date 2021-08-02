@@ -45,6 +45,9 @@
     <a href="{{ path('chambre_index') }}"><input type="button" value="Retour a la liste" /></a>
     <br>
     <br>
+    <button class="btn btn-primary"> <a  href="{{ path('reservation_new', {'id': chambre.id}) }}"><p style="color:white;">reserver</p></a>
+    </button>
+    <br>
     {% if app.user %}
         <a href="{{ path('chambre_edit', {'id': chambre.id}) }}"><input type="button" value="Modifier" /></a>
     {% endif %}

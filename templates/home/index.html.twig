@@ -15,7 +15,7 @@
 				<div class="carousel-caption d-none d-md-block">
 					<h5 class="animated bounceInRight" style="animation-delay: 1s">VOTRE SATISFACTION EST NOTRE PRIORITE</h5>
 					<p class="animated bounceInLeft" style="animation-delay: 2s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nulla, tempore. Deserunt excepturi quas vero.</p>
-					<p class="animated bounceInRight" style="animation-delay: 3s"><a href="{{ path('reservation_new') }}">FAIRE UNE RESERVATION</a></p>
+					
 				</div>
 			</div>
 			<div class="carousel-item">
@@ -23,7 +23,6 @@
 				<div class="carousel-caption d-none d-md-block">
 					<h5 class="animated slideInDown" style="animation-delay: 1s">NOTRE PRIORITE</h5>
 					<p class="animated fadeInUp" style="animation-delay: 2s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nulla, tempore. Deserunt excepturi quas vero.</p>
-					<p class="animated zoomIn" style="animation-delay: 3s"><a href="{{ path('reservation_new') }}">FAIRE UNE RESERVATION</a></p>
 				</div>
 			</div>
 			<div class="carousel-item">
@@ -31,9 +30,26 @@
 				<div class="carousel-caption d-none d-md-block">
 					<h5 class="animated zoomIn" style="animation-delay: 1s">VOTRE HAVRE DE PAIX</h5>
 					<p class="animated fadeInLeft" style="animation-delay: 2s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nulla, tempore. Deserunt excepturi quas vero.</p>
-					<p class="animated zoomIn" style="animation-delay: 3s"><a href="{{ path('reservation_new') }}">FAIRE UNE RESERVATION</a></p>
 				</div>
 			</div>
 		</div><a class="carousel-control-prev" data-slide="prev" href="#carouselExampleIndicators" role="button"><span aria-hidden="true" class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span></a> <a class="carousel-control-next" data-slide="next" href="#carouselExampleIndicators" role="button"><span aria-hidden="true" class="carousel-control-next-icon"></span> <span class="sr-only">Next</span></a>
 	</div>
+	<hr>
+<div class="container">
+	<div class="row">
+		{% for chambre in chambres %}
+		<div class="col-12 col-xs-6 col-sm-6 col-md-4 col-lg-3 mb-3" style="margin:px;">
+			<div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="/images/06.jpg" alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text">La Chambre numero {{ chambre.id }} est de type {{ chambre.typachambre }} son tarif par nuit est la somme de {{ chambre.prixparnuit }} qui compte {{ chambre.nombrelit }}lit de type {{ chambre.typelit }} est actuelement {{ chambre.statut ? 'Disponible':'Occuper' }} pour etre reserver </p>
+    <a href="{{ path('reservation_new', {'id': chambre.id}) }}" class="btn btn-primary">Reserver</a>
+  </div>
+</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+	<br>
+	<br>
 {% endblock %}
