@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Chambre{% endblock %}
+{% block title %}Modifier la chambre{% endblock %}
 
 {% block body %}
     <br>
@@ -9,7 +9,9 @@
     <br>
     <h1>Modifier la  Chambre</h1>
     <br>
-    {{ include('chambre/_form.html.twig', {'button_label': 'Update'}) }}
+    {% if app.user %}
+        {{ include('chambre/_form.html.twig', {'button_label': 'Update'}) }}
+    {% endif %}
 
     <a href="{{ path('chambre_index') }}"> <input type="button" value="Retour a la liste" /></a>
 
