@@ -3,11 +3,11 @@
 {% block title %}Reservation{% endblock %}
 
 {% block body %}
-<img src="/images/full-slider-1.jpg">
+    <img src="/images/full-slider-1.jpg">
     <br>
     <br>
     <h1>Reservation</h1>
-
+    {% if app.user %}
     <table class="table">
         <tbody>
             <tr>
@@ -38,4 +38,20 @@
     {{ include('reservation/_delete_form.html.twig') }}
     <br>
     <br>
+   {% endif %}
+   <div class="container">
+    <div class="row">
+        {% for chambre in chambres %}
+        <div class="col-12 col-xs-6 col-sm-6 col-md-4 col-lg-3 mb-3" style="margin:px;">
+            <div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="/images/06.jpg" alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text">La Chambre numero {{ chambre.id }} est de type {{ chambre.typachambre }} son tarif par nuit est la somme de {{ chambre.prixparnuit }} qui compte {{ chambre.nombrelit }}lit de type {{ chambre.typelit }} est actuelement {{ chambre.statut ? 'Disponible':'Occuper' }} pour etre reserver </p>
+    <a href="{{ path('reservation_new', {'id': chambre.id}) }}" class="btn btn-primary">Reserver</a>
+  </div>
+</div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

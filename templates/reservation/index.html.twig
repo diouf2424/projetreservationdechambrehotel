@@ -21,6 +21,7 @@
             </tr>
         </thead>
         <tbody>
+     {% if app.user %}
         {% for reservation in reservations %}
             <tr>
                 <td>{{ reservation.id }}</td>
@@ -49,4 +50,6 @@
     <a href="{{ path('reservation_new') }}"><input type="button" value="Ajouter reservation"/></a>
     <br>
     <br>
+    {% endif %}
+
 {% endblock %}

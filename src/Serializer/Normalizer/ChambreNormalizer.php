@@ -6,6 +6,10 @@ use Symfony\Component\Serializer\Normalizer\CacheableSupportsMethodInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 
+
+$normalizers = [new ObjectNormalizer()];
+$serializer = new Serializer($normalizers);
+
 class ChambreNormalizer implements NormalizerInterface, CacheableSupportsMethodInterface
 {
     private $normalizer;

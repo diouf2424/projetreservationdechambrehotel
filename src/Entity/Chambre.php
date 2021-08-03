@@ -10,8 +10,11 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ChambreRepository", repositoryClass=ChambreRepository::class)
- * @ApiResource()
  */
+#[ApiResource(
+
+)]
+
 class Chambre
 {
     /**
@@ -19,20 +22,24 @@ class Chambre
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
+    #[group(['lecture:collection'])] 
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
+    #[group(['lecture:collection'])]
     private $typachambre;
 
     /**
      * @ORM\Column(type="integer")
      */
+    #[group(['lecture:collection'])]
     private $nombrelit;
     /**
      * @ORM\Column(type="integer")
      */
+    #[group(['lecture:collection'])]
     private $prixparnuit;
 
     /**
