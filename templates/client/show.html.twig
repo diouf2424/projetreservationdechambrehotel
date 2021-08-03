@@ -37,10 +37,7 @@
                 <th>Pays</th>
                 <td>{{ client.pays }}</td>
             </tr>
-            <tr>
-                <th>reservation</th>
-                <td> <a href="{{ path('reservation_new') }}"><input type="submit"value="FAIRE UNE RESERVATION"></a></td>
-            </tr>
+           
         </tbody>
     </table>
     <br>
@@ -48,8 +45,11 @@
     <a href="{{ path('client_index') }}"><input type="button" value="Retour a la liste"/></a>
     <br>
     <br>
+     {% if app.user %}
     <a href="{{ path('client_edit', {'id': client.id}) }}"><input type="button" value="Modifier"/></a>
+    
     <br>
     <br>
     {{ include('client/_delete_form.html.twig') }}
+     {% endif %}
 {% endblock %}

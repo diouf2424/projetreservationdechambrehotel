@@ -21,21 +21,25 @@ class Client
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
+     #[group(['lecture:collection'])]
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
+     #[group(['lecture:collection'])]
     private $prenom;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
+     #[group(['lecture:collection'])]
     private $nom;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
+     #[group(['lecture:collection'])]
     private $email;
 
     /**

@@ -18,7 +18,7 @@
                 <th>Telephone</th>
                 <th>Ville</th>
                 <th>Pays</th>
-                <th>actions</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -32,8 +32,11 @@
                 <td>{{ client.ville }}</td>
                 <td>{{ client.pays }}</td>
                 <td>
+                {% if app.user %}
                     <a href="{{ path('client_show', {'id': client.id}) }}"><input type="button" value= "AFFICHER"</a>
+                 
                     <a href="{{ path('client_edit', {'id': client.id}) }}"><input type="button" value= "MODIFIER"</a>
+                    {% endif %}
                 </td>
             </tr>
         {% else %}
@@ -45,7 +48,7 @@
     </table>
     <br>
     <br>
-    <a href="{{ path('client_new') }}"> <input type="button" value= "AJOUTER UN CLIENT"</a>
+    <a href="{{ path('client_new') }}"> <input type="button" value= "DAVENIR UN CLIENT"</a>
     <br>
     <br>
     <br>
