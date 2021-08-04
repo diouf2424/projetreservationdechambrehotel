@@ -752,39 +752,36 @@
     </head>
 
     <body>
-
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top">
 		<div class="container">
 			<a class="navbar-brand" href="{{ path('home') }}"> <img src="{{ asset('images/logo.png') }}"></a> <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active">
-						<a class="nav-link" href="{{ path('home') }}">ACCEUIL</a>
+						<a class="nav-link" href="{{ path('home') }}"><button type="button" class="btn btn-outline-secondary">ACCEUIL</a></button>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{{ path('chambre_index') }}">CHAMBRES</a>
+						<a class="nav-link" href="{{ path('chambre_index') }}"><button type="button" class="btn btn-outline-secondary">CHAMBRES</a></button>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{{ path('chambre_new') }}">AJOUTER PIECE</a>
+						<a class="nav-link" href="{{ path('chambre_new') }}"><button type="button" class="btn btn-outline-secondary">AJOUTER</a></button>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{{ path('client_index') }}">CLIENTS</a>
+						<a class="nav-link" href="{{ path('client_index') }}"><button type="button" class="btn btn-outline-secondary">CLIENTS</a></button>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{{ path('app_register') }}">S'INSCRIRE </a>
+						<a class="nav-link" href="{{ path('app_register') }}"><button type="button" class="btn btn-outline-warning">S'INSCRIRE </a></button>
 					</li>
                     <li class="nav-item">
-						<a class="nav-link" href="{{ path('app_login') }}"><input type="button" value="CONNECTER"/></a>
+						<a class="nav-link" href="{{ path('app_login') }}"><button type="button" class="btn btn-outline-primary">CONNECTER</a></button>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path('app_logout')}}"><input type="button" value="DECONNECTER"/></a>
+                        <a class="nav-link" href="{{ path('app_logout')}}"><button type="button" class="btn btn-outline-danger">DECONNECTER</a></button>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-
-
 
         {% block body %}
 

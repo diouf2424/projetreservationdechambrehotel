@@ -39,16 +39,17 @@
 	<div class="row" style="border-radius: 10px;">
 		{% for chambre in chambres %}
 		<div class="" style="border-radius: 10px;">
-			<div class="card" style="width: 20rem; margin: 5px;">
+			<div class="card" style="width: 16rem; margin: px;">
   <img class="card-img-top" src="/images/06.jpg" alt="Card image cap">
-  <div class="card-body" style="border: solid; border-radius: 10px;">
+  <div class="card-body" style="border: 2px; border-radius: 10px;">
   <h3>Air conditioning</h3>
   <h3>Toiletries interne</h3>
   <h3>Minibar</h3>
   <h3>TV</h3>
 
     <p class="card-text">La Chambre numero {{ chambre.id }} est de type {{ chambre.typachambre }} son tarif par nuit est la somme de {{ chambre.prixparnuit }} qui compte {{ chambre.nombrelit }}lit de type {{ chambre.typelit }} est actuelement {{ chambre.statut ? 'Disponible':'Occuper' }} pour etre reserver </p>
-    <a href="{{ path('reservation_new', {'id': chambre.id}) }}" class="btn btn-primary">Reserver</a>
+    <a href="{{ path('reservation_new', {'id': chambre.id}) }}" class="btn btn-outline-primary">Reserver</a>
+    <a href="{{ path('chambre_show', {'id': chambre.id}) }}" class="btn btn-outline-success">Afficher</a>
   </div>
 </div>
 		</div>
