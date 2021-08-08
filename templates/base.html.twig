@@ -777,9 +777,11 @@
                     <li class="nav-item">
 						<a class="nav-link" href="{{ path('app_login') }}"><button type="button" class="btn btn-outline-primary">CONNECTER</a></button>
                     </li>
+                    {% if app.user %}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('app_logout')}}"><button type="button" class="btn btn-outline-danger">DECONNECTER</a></button>
 					</li>
+                    {% endif %}
 				</ul>
 			</div>
 		</div>
